@@ -1,0 +1,149 @@
+
+.conteudo-principal .paineis{
+    position: relative;
+    height: 700px;
+    display: flex;
+    justify-content: center;   
+    align-items: center; 
+}
+
+@media (max-width: 900px){
+    .conteudo-principal .paineis{
+        height: 500px;
+    }
+}
+
+.conteudo-principal .paineis .imagem-painel {
+    background-repeat: no-repeat; 
+    background-size: cover; 
+/* aqui no COVER , quer dizer que 
+essa imagem vai cobrir toda a minha div */
+    background-position: center;
+    min-width: 100%; 
+    height: 100%;
+    position: absolute; 
+    z-index: -1;
+    /* z-index : e o eixo de
+    profundidade */
+    filter: brightness(70%);
+     /*esse filter controla o 
+     brilho da minha imagem*/
+    opacity: 0;
+    transition: 0.5s ease-out;
+    font-size: 20px;
+}
+
+.conteudo-principal .paineis .imagem-painel.projeto1{
+    background-image: url('../imagens/painel1.jpg'); 
+}
+
+.conteudo-principal .paineis .imagem-painel.projeto2{
+    background-image: url('../imagens/painel2.jpg'); 
+}
+
+.conteudo-principal .paineis .imagem-painel.projeto3{
+    background-image: url('../imagens/painel3.jpg'); 
+}
+
+.conteudo-principal .paineis .imagem-painel.mostrar{
+    opacity: 1;
+}
+
+.conteudo-principal .paineis .titulo{        
+    color: #fff;
+    text-transform: uppercase;
+    font-size: calc(1em + 1vw);
+    /* aqui nesse tipo de fonte-size
+    e feito um calulo automático
+    quando mudamos para telas menores 
+    ajustando o tamanho da fonte */
+}
+
+.conteudo-principal .paineis .seta{
+    background: url(../imagens/seta.png) no-repeat center;
+    /* para nao repetir a imagem 
+    foi usado aqui no background (no-repeat center) */
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    position: absolute; 
+    text-indent: 100%; 
+    overflow: hidden; 
+    /* text-idente e overflow
+    vou usar esses dois para esconder 
+    o texto desse elemento seta. */
+}
+
+.conteudo-principal .paineis .seta.desabilitar{
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.conteudo-principal .paineis .btn-voltar{
+    left: 20px;
+    transform: rotateY(180deg); 
+    /* aqui no transform eu consigo
+    mudar a direção da minha seta  */
+}
+
+.conteudo-principal .paineis .btn-avancar{
+    right: 20px;
+}
+
+
+.quem-somos {     
+    background-color: #2941AB;
+    /* cor de fundo do texto
+    igual a cor da imagem */
+}
+
+.quem-somos .conteudo{
+    display: flex;            
+    align-items: center;
+    padding: 0 10%;
+}
+
+.quem-somos .conteudo .informacoes{
+    width: 40%;    
+}
+/* lembrando que so e possivel 
+colocar a imagem de um lado e o texto
+do outro por causa do display FLEX */
+.quem-somos .imagem{    
+    width: 60%; 
+       /*LARGURA MAXIMA*/
+}
+
+@media(max-width: 1200px){
+    .quem-somos .conteudo{
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px;
+    }
+
+    .quem-somos .conteudo .informacoes{
+        margin-bottom: 30px;
+    }
+
+    .quem-somos .conteudo .informacoes {
+        width: 100%;
+    }
+
+    .quem-somos .imagem {
+        display: none;
+    }
+}
+
+.quem-somos .conteudo .informacoes .titulo{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #1ED760;
+}
+
+.quem-somos .conteudo .informacoes .texto{
+    font-size: 20px;    
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: 400;    
+}
+
